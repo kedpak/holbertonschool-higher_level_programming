@@ -12,3 +12,5 @@ def print_matrix_integer(matrix=[[]]):
                 elif m == len(matrix):
                     print(str.format('{:d}', j))
                 m += 1
+    else:
+        return
