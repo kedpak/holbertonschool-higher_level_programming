@@ -8,5 +8,5 @@ def simple_delete(my_dict, key=""):
         else:
             switch = False
     if switch is True:
-        my_dict.pop(i)
+        del my_dict[i]
     return (my_dict)
