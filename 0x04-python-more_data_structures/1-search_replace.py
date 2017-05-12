@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
+    if my_list is None:
+        return None
     new_list = []
     i = 0
     for ele in range(0, len(my_list)):  # this loop retrieves index of search
@@ -11,4 +13,4 @@ def search_replace(my_list, search, replace):
         new_list.append(my_list[j])
         if j == search - 1:
             new_list[i] = replace
-    return(new_list)
+    return (new_list)
