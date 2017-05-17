@@ -1,0 +1,110 @@
+######## This is the test file ##############################
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [[1, 2, 3],[4, 5, 6]]
+>>> matrix_e = [[1, 2, 3],['g', 5, 6]]
+
+
+########## divide by 2 ####
+>>> matrix_divided(matrix, 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+########### divide by 3 ####
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+########### check if new list is created ####
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+
+########### check if element is not float or int####
+>>> matrix_divided(matrix_e, 3)
+Traceback (most recent call last):
+	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+########### check if elements in matrix is none or empty###
+>>> matrix_divided(None, 3)
+Traceback (most recent call last):
+	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+########### check if div is an int or float ####
+>>> matrix_divided(matrix, 'hello')
+Traceback (most recent call last):
+	  ...
+TypeError: div must be a number
+
+########### check if div is 0 ####
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+	  ...
+ZeroDivisionError: division by zero
+
+############ check if matrix indexes are same size
+>>> len(matrix[0]) != len(matrix[1])
+False
+
+
+# input of standard matrix and div = float
+>>> matrix_divided(matrix, 1.5)
+[[0.67, 1.33, 2.0], [2.67, 3.33, 4.0]]
+
+
+# print the matrix
+>>> matrix
+[[1, 2, 3], [4, 5, 6]]
+
+
+# input of div = 'string'
+>>> matrix_divided(matrix, "Hi")
+Traceback (most recent call last):
+	  ...
+TypeError: div must be a number
+
+
+# input of div = 0
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call forlast):
+	  ...
+ZeroDivisionError: division by zero
+
+
+# change the matrix to not be symmetrical
+>>> matrix = [[1, 2, 3],[4, 6]]
+
+# test above asymmetrical matrix
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+	  ...
+TypeError: Each row of the matrix must have the same size
+
+
+# change the matrix to be symmetrical, but has a string
+>>> matrix = [[1, 'hi', 2], [5, 7, 8]]
+
+# input of new matrix that includes strings
+>>> matrix_divided(matrix, 6)
+Traceback (most recent call last):
+	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+# matrix is None
+>>> matrix_divided(None, 2)
+Traceback (most recent call last):
+	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+# matrix includes True and False
+>>> matrix = [[True, False], [1, 0]]
+
+>>> matrix_divided(matrix, 2)
+[[0.5, 0.0], [0.5, 0.0]]
+
+# no arguments
+>>> matrix_divided()
+Traceback (most recent call last);
+	  ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

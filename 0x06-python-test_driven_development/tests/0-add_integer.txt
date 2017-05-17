@@ -1,0 +1,45 @@
+######This is the test file#########
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# add two integers
+>>> add_integer(3, 28)
+31
+
+# add one integer and one float
+>>> add_integer(3.2, 5)
+8
+
+# add one integer and one negative integer
+>>> add_integer(10, -5)
+5
+
+#  add two floats
+>>> add_integer(3.5, 10.8)
+13
+
+# add an int and a string
+>>> add_integer(4, "string")
+Traceback (most recent call last):
+	  ...
+TypeError: b must be an integer
+
+# add long floats
+>>> add_integer(1.9999999999, 1)
+2
+
+# two none's ad
+>>> add_integer(None, None)
+Traceback (most recent call last):
+	  ...
+TypeError: a must be an integer
+
+
+# input bool and bool
+>>> add_integer(False, True)
+1
+
+# no arguments
+>>> add_integer()
+Traceback (most recent call last):
+	  ...
+TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
