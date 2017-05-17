@@ -4,23 +4,30 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
-    def setUP(self):
-        pass
-    def tearDown(self):
-        pass
+
     def testOne(self):
-        max_integer([1, 2, 3, 4])
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+
     def testTwo(self):
-        self.assertTrue(max_intger
-        max_integer([a, 1, 2, 4])
-        with self.assertRaises(TypeError):
-            print("type")
-    def testThree(self):
-        max_integer([4, 4.4, 4.8])
+        self.assertEqual(max_integer([2]), 2)
 
+    @unittest.expectedFailure
+    def test_char(self):
+        self.assertTrue(max_integer([a, 1, 2, 4]), broken)
 
+    @unittest.expectedFailure
+    def test_empty(self):
+        self.assertNone(max_integer(), broken)
 
+    @unittest.expectedFailure
+    def one_neg(self):
+        self.assertEqual(max_integer([1, 5, -4, 9]), broken)
+
+    @unittest.expectedFailure
+    def all_neg(self):
+        self.assertEqual(max_integer([-4, -5, -2, -10]), broken)
 
 if __name__ == '__main__':
     unittest.main()
