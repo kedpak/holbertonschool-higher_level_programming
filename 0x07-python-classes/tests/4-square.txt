@@ -1,41 +1,48 @@
 ************ Test file ***********
 
+The ``4-square`` module
+
+Using ``Square`` class
+
+First import ``Square`` class
+
 >>> Square = __import__('4-square').Square
 
 
-*********** standard test ************************************
+*********** standard test *****
 >>> my_square = Square(89)
->>> my_square.area()
+>>> print(my_square.area())
 7921
 >>> my_square.size
 89
 
-********** character passed through **************************
+********** character passed through ***
 >>> my_square = Square('a')
 Traceback (most recent call last):
 	  ...
 TypeError: size must be an integer
 
 
-********** negative integer passed ***************************
+********** negative integer passed **************
 >>> my_square = Square(-4)
 Traceback (most recent call last):
           ...
 ValueError: size must be >= 0
 
-********** float passed *****************************************
+********** float passed ****************
 >>> my_square = Square(3.4)
 Traceback (most recent call last):
           ...
 TypeError: size must be an integer
 
-********** no integer passed *******************************
+********** no integer passed *******
 >>> my_square = Square(None)
+>>> print(my_square)
 Traceback (most recent call last):
 	  ...
 TypeError: size must be an integer
 
-*********** multiple arguments passed ************************
+*********** multiple arguments passed *******
 >>> my_square = Square(3, 13)
 Traceback (most recent call last):
 	  ...
