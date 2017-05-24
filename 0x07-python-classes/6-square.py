@@ -28,6 +28,8 @@ integers")
 
     @size.setter
     def size(self, value):
+        if size < 0:
+            raise ValueError("size must be >= 0")
         if type(value) != int:
             raise TypeError("size must be an integer")
         if value < 0:
@@ -36,6 +38,11 @@ integers")
 
     @position.setter
     def position(self, value):
+        if type(position) != tuple:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(position[0]) != int or type(position[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
         if type(value) != tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
