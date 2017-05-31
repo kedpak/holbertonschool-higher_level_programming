@@ -12,12 +12,10 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         '''public method: __init__
         '''
-        if type(width) is not int:
-            raise TypeError("width must be an integer")
-        if type(height) is not int:
-            raise TypeError("height must be an integer")
         self.__width = width
         self.__height = height
+        BaseGeometry.integer_validator(self, "height", self.__height)
+        BaseGeometry.integer_validator(self, "width", self.__width)
 
     def area(self):
         '''public method: area
@@ -27,4 +25,5 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         '''public method: __str__
         '''
-        return ("[Rectangle] {0}/{1}".format(self.__width, self.__height))
+        return ("[{0}] {1}/{2}".format(self.
+                __class__.__name__, self.__width, self.__height))
