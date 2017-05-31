@@ -1,7 +1,13 @@
 #!/usr/bin/python3
-class MyList(list):     # setting up class with list inheritance
-    def __init__(self):  #  init does not have any special functions
+'''module: 1-my_list
+'''
+
+
+class MyList(list):
+    '''class: MyList
+    '''
+    def __init__(self):
         pass
 
-    def print_sorted(self):    #  printing a sorted list
+    def print_sorted(self):
         print(sorted(self))
