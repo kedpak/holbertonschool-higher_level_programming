@@ -15,13 +15,10 @@ class Square(Rectangle):
         self.__size = size
         self.__width = size
         self.__height = size
+        super().__init__(size, size)
 
     def __str__(self):
         '''public method: str
         '''
-        return ("[Rectangle] {0}/{1}".format(self.__width, self.__height))
-
-    def area(self):
-        '''public method: area
-        '''
-        return (self.__height * self.__width)
+        return ("[Rectangle] {1}/{2}".
+                format(self.__class__.__name__, self.__width, self.__height))
