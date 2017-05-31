@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+'''module: 7-base_geometry.py
+'''
+
+
 class BaseGeometry:
+    '''class: BaseGeometry
+    '''
     def area(self):
         raise Exception("area() is not implemented")
 
