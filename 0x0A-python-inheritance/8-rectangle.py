@@ -1,13 +1,16 @@
 #!/usr/bin/python3
+'''module: 8-rectangle
+'''
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-
+    '''class: Rectangle
+    '''
     def __init__(self, width, height):
-        if type(width) is not int:
-            raise TypeError("width must be an integer")
-        if type(height) is not int:
-            raise TypeError("height must be an integer")
+        '''method: init
+        '''
         self.__width = width
         self.__height = height
+        BaseGeometry.integer_validator(self, "height", height)
+        BaseGeometry.integer_validator(self, "width", width)
