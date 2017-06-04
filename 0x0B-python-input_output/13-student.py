@@ -29,6 +29,5 @@ class Student:
     def reload_from_json(self, json):
         '''method: replace attribute with passed in attribute
         '''
-        setattr(self, "first_name", json["first_name"])
-        setattr(self, "last_name", json["last_name"])
-        setattr(self, "age", json["age"])
+        for key, value in json.items():
+            setattr(self, key, value)
