@@ -16,7 +16,7 @@ if __name__ == "__main__":
                          charset="utf8")
 
     cursor = db.cursor()
-    cursor.execute('SELECT * FROM hbtn_0e_0_usa.states ORDER BY states.id')
+    cursor.execute('SELECT * FROM hbtn_0e_0_usa.states ORDER BY id ASC')
     result = cursor.fetchall()
 
     for i in result:
