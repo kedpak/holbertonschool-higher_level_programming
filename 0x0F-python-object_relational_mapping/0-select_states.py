@@ -10,12 +10,14 @@ import sys
 db = MySQLdb.connect(host="localhost",
                      port=3306,
                      user="root",
-                     passwd="",
+                     passwd="root",
                      db="hbtn_0e_0_usa",
                      charset="utf8")
 
 cursor = db.cursor()
-cursor.execute('SELECT * FROM hbtn_0e_0_usa.states')
+cursor.execute('SELECT * FROM hbtn_0e_0_usa.states ORDER BY states.id')
 result = cursor.fetchall()
 for i in result:
     print(i)
+cursor.close()
+db.close()
