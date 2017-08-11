@@ -6,6 +6,7 @@ lists all states passed into argument
 
 import MySQLdb
 import sys
+import string
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost",
@@ -15,9 +16,9 @@ if __name__ == "__main__":
                          db=sys.argv[3])
 
     query = """SELECT * FROM states WHERE
-    name LIKE '%s' ORDER BY id ASC;""" % sys.argv[4]
+    name LIKE '%s' ORDER BY id ASC;"""
     cursor = db.cursor()
-    cursor.execute(query)
+    cursor.execute(query % sys.argv[4])
     result = cursor.fetchall()
 
     for i in result:
