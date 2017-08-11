@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 """
-list all states from database hbtn_0e_0_usa
-with names that start with capiatl 'N'
+joins tables to list by matching state id
 """
 import MySQLdb
 import sys
