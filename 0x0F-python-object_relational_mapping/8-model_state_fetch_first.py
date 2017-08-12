@@ -19,6 +19,10 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     state_obj = session.query(State).first()
-    print("{}: {}".format(state_obj.id, state_obj.name))
+    try:
+        print("{}: {}".format(state_obj.id, state_obj.name))
+    except:
+        print("Nothing")
+
     session.commit()
     session.close()
