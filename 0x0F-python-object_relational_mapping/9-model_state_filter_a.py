@@ -19,7 +19,7 @@ if __name__ == "__main__":
     session = Session()
 
     for i in session.query(State).filter(State.name.contains('a')):
-        print("{}: {}".format(state_obj.id, state_obj.name))
+        print("{}: {}".format(i.id, i.name))
 
     session.commit()
     session.close()
