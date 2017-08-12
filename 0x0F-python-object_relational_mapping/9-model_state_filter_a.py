@@ -18,10 +18,10 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    state_obj = session.query(State)
+    state_obj = session.query(State).filter(State.name.contains('a'))
 
     for i in range(len(state_obj.all())):
-        if "a" in state_obj[i].name:
-            print("{}: {}".format(state_obj[i].id, state_obj[i].name))
+        print(state_obj[i].name)
+
     session.commit()
     session.close()
