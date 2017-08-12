@@ -20,6 +20,10 @@ if __name__ == "__main__":
 
     state_obj = session.query(State).filter(State.name == sys.argv[4])
 
-    print("{}".format(state_obj[0].id))
+    try:
+        print("{}".format(state_obj[0].id))
+    except:
+        print("Not found")
+
     session.commit()
     session.close()
