@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(engine)
     session = Session()
-    state_name = session.query(State.name, State.id).order_by(State.id)
-    print("{}: {}".format(state_name[0][1], state_name[0][0]))
+    state_obj = session.query(State).first()
+    print("{}: {}".format(state_obj.id, state_obj.name))
     session.commit()
     session.close()
