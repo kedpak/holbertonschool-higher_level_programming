@@ -21,7 +21,7 @@ if __name__ == "__main__":
     state_obj = session.query(State).filter(State.name.contains('a'))
 
     for i in range(len(state_obj.all())):
-        print(state_obj[i].name)
+        print("{}: {}".format(state_obj[i].id, state_obj[i].name))
 
     session.commit()
     session.close()
