@@ -20,4 +20,7 @@ if __name__ == "__main__":
             sys.stderr.write("Not a valid JSON\n")
         else:
             req = req.json()
-            print("[{}] {}".format(req['id'], req['name']))
+            try:
+                print("[{}] {}".format(req['id'], req['name']))
+            except:
+                sys.stderr.write("No Result\n")
