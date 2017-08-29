@@ -9,18 +9,13 @@ import sys
 
 if __name__ == "__main__":
 
-    if len(sys.argv) != 2:
-        sys.stderr.write("No Result\n")
-    elif sys.argv[1].isalpha() is False or sys.argv[1].islower() is False:
-        sys.stderr.write("No Result\n")
-    else:
+    try:
         url = "http://0.0.0.0:5000/search_user"
         req = requests.post(url, data={'q': sys.argv[1]})
         if req.headers['content-type'] != 'application/json':
             sys.stderr.write("Not a valid JSON\n")
         else:
             req = req.json()
-            try:
-                print("[{}] {}".format(req['id'], req['name']))
-            except:
-                sys.stderr.write("No Result\n")
+            print("[{}] {}".format(req['id'], req['name']))
+    except:
+        print("No Result")
