@@ -19,8 +19,5 @@ if __name__ == "__main__":
         if req.headers['content-type'] != 'application/json':
             print("Not a valid JSON")
         else:
-            data_str = req.content.decode("utf8")
-            data_str = data_str.replace('{', "").replace('}', "").replace(
-                '\n', "").replace(' ', "")
-            dic2 = dict(item.split(':') for item in data_str.split(','))
-            print("[{}] {}".format(dic2['"id"'], dic2['"name"'].strip('"')))
+            req = req.json()
+            print("[{}] {}".format(req['id'], req['name']))
