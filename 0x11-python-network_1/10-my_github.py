@@ -14,4 +14,8 @@ if __name__ == "__main__":
     userPswd = sys.argv[2]
     req = requests.get(url, auth=(userName, userPswd))
     req = req.json()
-    print(req.get('id'))
+
+    try:
+        print(req.get('id'))
+    except:
+        print("None")
