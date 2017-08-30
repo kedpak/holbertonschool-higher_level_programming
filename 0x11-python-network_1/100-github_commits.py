@@ -15,7 +15,7 @@ if __name__ == "__main__":
     req = req.json()
 
     i = 0
-    while (i < 10):
+    while (i < len(req)):
         print("{}: {}".format(req[i].get('sha'),
                               req[i].get('commit').get('author').get('name')))
         i += 1
