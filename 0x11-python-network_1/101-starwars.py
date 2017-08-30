@@ -11,7 +11,7 @@ import sys
 if __name__ == "__main__":
     req = requests.get('https://swapi.co/api/people/?search=' + sys.argv[1])
     req = req.json()
-    print("Number of result: {}".format(req['count']))
+    print("Number of results: {}".format(req['count']))
 
     i = 0
     while i <= len(req['results']):
