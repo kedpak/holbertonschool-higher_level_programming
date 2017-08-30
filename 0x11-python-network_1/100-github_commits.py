@@ -16,7 +16,6 @@ if __name__ == "__main__":
 
     i = 0
     while (i < 10):
-
-        print("{}: {}".format(req[i]['sha'],
-                              req[i]['commit']['committer']['name']))
+        print("{}: {}".format(req[i].get('sha'),
+                              req[i].get('author').get('login')))
         i += 1
