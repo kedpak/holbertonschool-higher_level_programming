@@ -9,7 +9,6 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    name_list = []
     req = requests.get('https://swapi.co/api/people/?search=' + sys.argv[1])
     req = req.json()
     print("Number of result: {}".format(req['count']))
@@ -21,10 +20,7 @@ if __name__ == "__main__":
             req = req2.json()
             i = 0
         try:
-            name_list.append(req['results'][i].get('name'))
+            print(req['results'][i].get('name'))
         except:
             pass
         i += 1
-
-    for name in name_list:
-        print(name)
