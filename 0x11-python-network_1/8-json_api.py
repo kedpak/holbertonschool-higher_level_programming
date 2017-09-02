@@ -18,4 +18,4 @@ if __name__ == "__main__":
             req = req.json()
             print("[{}] {}".format(req['id'], req['name']))
     except:
-        print("No Result")
+        print("No result")
