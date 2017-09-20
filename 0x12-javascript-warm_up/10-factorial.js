@@ -2,20 +2,12 @@
 
 let args = process.argv.slice(2);
 
-let total = 1;
 function factorial (num) {
-  if (args[0] <= 0) {
-    console.log(1);
-    return;
-  }
-  if (isNaN(args[0]) === true) {
-    console.log(1);
-  } else if (Number(num) === 1) {
-    console.log(total);
+  if (isNaN(num) === true || num <= 0) {
+    return (1);
   } else {
-    total *= num;
     return (Number(num) * factorial(Number(num) - 1));
   }
 }
 
-factorial(Number(args[0]));
+console.log(factorial(args[0]));
