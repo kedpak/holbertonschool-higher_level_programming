@@ -4,6 +4,10 @@ let args = process.argv.slice(2);
 
 let total = 1;
 function factorial (num) {
+  if (args[0] <= 0) {
+    console.log(1);
+    return;
+  }
   if (isNaN(args[0]) === true) {
     console.log(1);
   } else if (Number(num) === 1) {
