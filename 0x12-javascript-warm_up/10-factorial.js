@@ -4,7 +4,9 @@ let args = process.argv.slice(2);
 
 let total = 1;
 function factorial (num) {
-  if (Number(num) === 1 || Number(num) === true) {
+  if (isNaN(args[0]) === true) {
+    console.log(1);
+  } else if (Number(num) === 1) {
     console.log(total);
   } else {
     total *= num;
