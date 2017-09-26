@@ -1,4 +1,4 @@
-#!/urs/bin/node
+#!/usr/bin/node
 // Function that returns the reserved version of a list
 
 exports.esrever = function (list) {
