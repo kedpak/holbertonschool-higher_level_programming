@@ -23,7 +23,7 @@ request(options, function (err, res, body) {
   let count = 0;
   for (let i = 0; i < json.results.length; i++) {
     for (let j = 0; j < json.results[i].characters.length; j++) {
-      if (json.results[i].characters[j] === "https://swapi.co/api/people/18/") {
+      if (json.results[i].characters[j] == "https://swapi.co/api/people/18/") {
          count += 1;
 	}
      }
