@@ -6,7 +6,7 @@ let args = process.argv.slice(2);
 
 fs.readFile(args[0], 'utf-8', function (err, data) {
   if (err) {
-    console.log(err);
+    return console.log(err);
   }
   console.log(data);
 });
