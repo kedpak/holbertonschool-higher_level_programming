@@ -4,23 +4,25 @@
 
 const Rectangle = require('./4-rectangle').Rectangle;
 
-exports.Square = function Square (size) {
+function Square (size) {
   Rectangle.call(this, size, size);
+}
 
-  this.charPrint = function charPrint (c) {
-    if (c == null) {
-      let rec = new Rectangle(size, size);
-      rec.print();
-    } else {
-      let list = [];
-      for (let i = 0; i < size; i++) {
-        for (let j = 0; j < size; j++) {
-          list.push(c);
-        }
-        let xPrint = list.join('');
-        console.log(xPrint);
-        list = [];
+Square.prototype.charPrint = function (c) {
+  if (c == null) {
+    let rec = new Rectangle(this.width, this.height);
+    rec.print();
+  } else {
+    let list = [];
+    for (let i = 0; i < this.width; i++) {
+      for (let j = 0; j < this.height; j++) {
+        list.push(c);
       }
+      let xPrint = list.join('');
+      console.log(xPrint);
+      list = [];
     }
-  };
+  }
 };
+
+exports.Square = Square;
