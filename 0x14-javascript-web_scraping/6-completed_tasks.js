@@ -20,17 +20,14 @@ request(options, function (err, res, body) {
     console.log(err);
   }
   let dict = {};
-  let count = 0;
   let bodyData = JSON.parse(body);
   for (let i = 0; i < bodyData.length; i++) {
-    if (i > 0 && bodyData[i - 1].userId !== bodyData[i].userId) {
-      dict[bodyData[i - 1].userId] = count;
-      count = 0;
-    } else if (i + 1 === bodyData.length) {
-      dict[bodyData[i].userId] = count;
-    }
     if (bodyData[i].completed === true) {
-      count += 1;
+      if (dict.hasOwnProperty(bodyData[i].userId) === false) {
+        dict[bodyData[i].userId] = 1;
+      } else {
+        dict[bodyData[i].userId] += 1;
+      }
     }
   }
   console.log(dict);
