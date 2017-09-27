@@ -20,11 +20,13 @@ request(options, function (err, res, body) {
   }
   let json = JSON.parse(body);
   let charList = [];
+  /* first loop grabs character ID from character list */
   for (let j = 0; j < json.characters.length; j++) {
     let charStr = json.characters[j].slice(28, 30);
     charStr = parseInt(charStr, 10);
     charList.push(charStr);
   }
+  /* second loop grabs character name through new request and prints */
   for (let j = 0; j < charList.length; j++) {
     let options2 = {
       url: 'http://swapi.co/api/people/' + charList[j],
