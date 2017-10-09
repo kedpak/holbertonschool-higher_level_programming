@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+// Write a script that prints x times “C is fun”
 let args = process.argv.slice(2);
 
 if (isNaN(args[0]) === true) {
