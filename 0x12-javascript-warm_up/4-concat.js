@@ -1,5 +1,6 @@
 #!/usr/bin/node
-
+//Write a script that prints two arguments passed 
+// to it, in the following format: “ is ”
 let args = process.argv.slice(2);
 
 if (args.length === 2) {
