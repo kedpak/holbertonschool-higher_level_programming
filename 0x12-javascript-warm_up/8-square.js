@@ -1,5 +1,7 @@
 #!/usr/bin/node
-
+// Write a script that prints a square
+// The first argument is the size of the square
+// You must use the character X to print the square
 let args = process.argv.slice(2);
 
 if (isNaN(args[0]) === true) {
